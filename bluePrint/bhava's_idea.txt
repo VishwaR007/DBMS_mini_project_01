@@ -1,0 +1,3 @@
+Generating a QR-code to each student, and if scanned gets the hole detail of the student.
+
+Generating the QR-code job is done by the librearien and scanning can be done by the teachers.

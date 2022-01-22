@@ -1,0 +1,76 @@
+
+
+/* The card's style is here  */
+/* .card{
+    width: 300px;
+    height: 100%;
+    margin-top: 50px;
+    
+} */
+
+/* The another cards style is here :  */
+/* .containerCard{
+    margin-top: 30px;
+}
+
+.cardBoxMain1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardBoxes{
+    display: flex;
+    justify-content: space-around;
+}
+
+.card1{
+    height: 300px;
+    width: 300px;
+    background-color: pink;
+    border-radius: 20px;
+    padding: 5px;
+    margin-left: 10px;
+} */
+
+/* The style of another card is here : */
+.container{
+    margin-top: 10px;
+}
+
+.card11{
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+    background-color: pink;
+    margin: 0 10px;
+}
+
+
+
+/* Footers style comes here */
+.footerConntainer{
+    height: 30vh;
+    background-color: rgb(56, 50, 50);
+    color: white;
+}
+
+.heading p {
+    font-size: 25px;    
+}
+
+.bigBox{
+    display: flex;
+    justify-content: space-around;
+}
+
+ul li:hover {
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+}
+
+.box1 p:hover {
+    font-size: 23px;
+    color: greenyellow;
+    cursor: pointer;
+}

@@ -1,0 +1,19 @@
+COLLEGE DATA BASE MANAGEMENT SYSTEM
+
+1) Starts with a login page.
+	If they have an account they can login directly.
+	else they have to create an account.
+2) Creating a account :
+	Name
+	Age
+	Address
+	Phone Number
+	E-mail
+	Departmenet (this also behaves has a conditional for the different departmetal views)
+	Semester
+	USN
+	Dayscolor or hosteler {here make use of check boxes}
+	A drop down list having options (student, teacher, accountSection, management)
+	[ student = have the access to his profile, attendence of each subject, marks of each test, results of vtu 	exams (try to make the results visible in this website before he or she searches it and send it as a 	notificatiion when the result is released), amount of fee paid and the balence fee(maintained like in passBook of the bank with fee paid date)]
+	[ teacher = have the access to his profile, attendence and marks of each student (arrenged based on 	semesters) (accessing through a search bar which can the value USN or the Name of the student), Graphical representation of the marks and attenedence of the student, Results of the VTU exams of the students (try to make the results visible in this website before he or she searches it and send it as a 	notificatiion when the result is released),]
+	[accountSection = have the access to his profile, 
