@@ -1,0 +1,39 @@
+
+.mainContainer{
+    background-color: cyan;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* width: 100vw; */
+    height: 90vh;
+}
+
+.bigBox1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.bigBox1 a{
+    font-style: none;
+}
+
+.box{
+    height: 250px;
+    width: 350px;
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 20px;
+    /* transition: width 3s ease-in 0.5s; */
+
+}
+
+.box:hover{
+    height: 350px;
+    width: 400px;
+}

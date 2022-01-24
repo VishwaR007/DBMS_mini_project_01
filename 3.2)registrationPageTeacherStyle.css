@@ -1,0 +1,83 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.mainContainer{
+    /* background-color: rgb(70, 153, 91); */
+    /* padding: 30px; */
+    height: 100vh;
+    background-image: url("imgs1/keerr_img1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+.container1{
+    width: 65%;
+    /* background-color: rgb(73, 73, 240); */
+    margin: auto;
+    /* border: 5px solid black; */
+}
+
+.heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading i {
+    font-size: 150px;
+    /* padding: 30px; */
+    margin: 30px;
+}
+
+.listOfCatagories{
+    margin: 20px 200px 0px 200px;
+}
+
+/* .listOfCatagories{
+    margin-top: 90px;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+
+} */
+
+
+
+
+
+@media screen and (max-width: 1400px) {
+    .container1{
+        width: 75%;
+        /* background-color: red; */
+    }
+    .listOfCatagories{
+        margin: 20px 150px;
+    }
+}
+@media screen and (max-width: 1150px) {
+    .container1{
+        width: 90%;
+        /* background-color: yellow; */
+    }
+}
+@media screen and (max-width: 900px) {
+    .container1{
+        width: 95%;
+        /* background-color: greenyellow; */
+    }
+    .listOfCatagories{
+        margin: 20px 100px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .container1{
+        width: 100%;
+        /* background-color: olive; */
+    }
+    .listOfCatagories{
+        margin: 20px 50px;
+    }
+}

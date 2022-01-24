@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="3.2)registrationPageTeacherStyle.css" class="rel">
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <!-- Bootstrap : -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Font awsome : -->
+  <script src="https://kit.fontawesome.com/a6e2755b4d.js" crossorigin="anonymous">
+  </script>
+
+</head>
+
+<body>
+  <div class="mainContainer">
+    <div class="container1">
+      <div class="heading">
+        <!-- <i class="bi bi-person-bounding-box"></i> -->
+        <!-- <i class="bi bi-person-circle"></i> -->
+        <i class="fas fa-user-graduate"></i>
+        <h3>TEACHER</h3>
+      </div>
+      <div class="listOfCatagories">
+
+        <form class="row g-3" action="3.2)registrationPageTeacherPHP.php" method="post">
+          <div class="col-md-12">
+            <label for="inputFirstName" class="visually-hidden">First Name: </label>
+            <div class="input-group">
+              <div class="input-group-text">
+                <i class="bi bi-person-fill"></i>
+              </div>
+              <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" name="FirstName">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="inputLastName" class="visually-hidden">Last Name: </label>
+            <div class="input-group">
+              <div class="input-group-text">
+                <i class="bi bi-person-fill"></i>
+              </div>
+              <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" name="LastName">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="SSN" class="visually-hidden">SSN: </label>
+            <div class="input-group">
+              <div class="input-group-text">
+                <i class="bi bi-pencil-square"></i>
+              </div>
+              <input type="text" class="form-control" id="SSN" placeholder="SSN" name="SSN">
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="Branch" class="form-label visually-hidden">Branch: </label>
+            <div class="input-group">
+              <div class="input-group-text">
+                <i class="bi bi-pencil-square"></i>
+              </div>
+              <select id="Branch" class="form-select" name="Branch">
+                <option selected>Branch : </option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="MEC">MEC</option>
+                <option value="CIVIL">CIVIL</option>
+                <option value="EEE">EEE</option>
+              </select>
+            </div>
+          </div>
+          <!-- <div class="col-md-4">
+                  <label for="Year" class="form-label visually-hidden">Year: </label>
+                  <div class="input-group">
+                    <div class="input-group-text">
+                      <i class="bi bi-pencil-square"></i>
+                    </div>                   
+                    <select id="Year" class="form-select">
+                      <option selected>Year : </option>
+                      <option>First</option>
+                      <option>Second</option>
+                      <option>Third</option>
+                      <option>Fourth</option>
+                    </select>
+                  </div>                
+                </div>
+                <div class="col-md-4">
+                  <label for="SEM" class="form-label visually-hidden">SEM: </label>
+                  <div class="input-group">
+                    <div class="input-group-text">
+                      <i class="bi bi-pencil-square"></i>
+                    </div>                   
+                    <select id="SEM" class="form-select">
+                      <option selected>SEM : </option>
+                      <option>First</option>
+                      <option>Second</option>
+                      <option>Third</option>
+                      <option>Fourth</option>
+                      <option>Fifth</option>
+                      <option>Sixth</option>
+                      <option>Seventh</option>
+                      <option>Eigthth</option>
+                    </select>
+                  </div>                 
+                </div> -->
+
+          <div class="col-md-12">
+            <label for="inputEmail" class="form-label visually-hidden">Email: </label>
+            <div class="input-group">
+              <div class="input-group-text">
+                <i class="bi bi-envelope-open-fill"></i>
+              </div>
+              <input type="email" class="form-control" id="inputEmail" placeholder="e-mail" name="Email">
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <label for="exampleInputPassword1" class="form-label visually-hidden">Password</label>
+            <div class="input-group">
+              <div class="input-group-text">
+                <i class="bi bi-key-fill"></i>
+              </div>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="Password">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="PHONENUMBER" class="form-label visually-hidden">Phone Number: </label>
+            <div class="input-group">
+              <div class="input-group-text">
+                <i class="bi bi-telephone-forward-fill"></i>
+              </div>
+              <input type="text" class="form-control" id="PHONENUMBER" placeholder="Phone Number" name="PhoneNumber">
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck" style="color: rgb(224, 211, 211);">
+                I agree with terms and condition.
+              </label>
+            </div>
+          </div>
+          <div class="col-12" style="text-align: center;">
+            <button type="submit" class="btn btn-primary btn-lg">Register</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</body>
+
+</html>
