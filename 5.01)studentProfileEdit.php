@@ -1,0 +1,203 @@
+<?php
+
+$DATABASE_HOST = "localhost";
+$DATABASE_USER = "root";
+$DATABASE_PASS = "";
+$DATABASE_NAME = "mini_project_01";
+
+$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+
+
+if ($con->connect_error) {
+    die("Failed to connect : " . $con->connect_error);
+}
+
+// session_start();
+// $USN = $_SESSION['RollNumber'];
+
+$USN = '092';
+
+$stmt = ("SELECT * FROM student_register WHERE USN='$USN'");
+$stmt_run = mysqli_query($con, $stmt);
+
+
+$row = mysqli_fetch_array($stmt_run);
+// var_dump($row);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="5.01)studentProfieEditStyle.css" class="rel">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Font awsome : -->
+    <script src="https://kit.fontawesome.com/a6e2755b4d.js" crossorigin="anonymous">
+    </script>
+    <!-- Google Fonts :  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Permanent+Marker&family=Satisfy&display=swap" rel="stylesheet">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <div class="container1">
+        <div class="container2">
+            <div class="iconBox">
+                <i class="fas fa-user-secret"></i>
+            </div>
+            <div class="table1">
+
+
+                <form class="row g-3" action="" method="post">
+                    <div class="col-md-12">
+                        <label for="inputFirstName" class="visually-hidden">First Name: </label>
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                          </svg> -->
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+                            <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" name="FirstName" value=<?php echo $row['First Name'] ?> required>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="inputLastName" class="visually-hidden">Last Name: </label>
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+                            <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" name="LastName" value=<?php echo $row['Last Name'] ?> required>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="USN" class="visually-hidden">USN: </label>
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <!-- <i class="bi bi-pencil-square"></i> -->
+                                <i class="bi bi-person-badge"></i>
+                            </div>
+                            <input type="text" class="form-control" id="USN" placeholder="USN" name="USN" value=<?php echo $row['USN'] ?> required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="Branch" class="form-label visually-hidden">Branch: </label>
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <i class="bi bi-pencil-square"></i>
+                            </div>
+                            <select id="Branch" class="form-select" name="Branch" required>
+                                <option selected> <?php echo $row['Branch'] ?> </option>
+                                <option value="CSE">CSE</option>
+                                <option value="ECE">ECE</option>
+                                <option value="MEC">MEC</option>
+                                <option value="CIVIL">CIVIL</option>
+                                <option value="EEE">EEE</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="Year" class="form-label visually-hidden">Year: </label>
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <i class="bi bi-pencil-square"></i>
+                            </div>
+                            <select id="Year" class="form-select" name="Year" required>
+                                <option selected> <?php echo $row['Year'] ?> </option>
+                                <option value="First">First</option>
+                                <option value="Second">Second</option>
+                                <option value="Third">Third</option>
+                                <option value="Fourth">Fourth</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="SEM" class="form-label visually-hidden">SEM: </label>
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <i class="bi bi-pencil-square"></i>
+                            </div>
+                            <select id="SEM" class="form-select" name="SEM" required>
+                                <option selected> <?php echo $row['Sem'] ?> </option>
+                                <option value="First">First</option>
+                                <option value="Second">Second</option>
+                                <option value="Third">Third</option>
+                                <option value="Fourth">Fourth</option>
+                                <option value="Fifth">Fifth</option>
+                                <option value="Sixth">Sixth</option>
+                                <option value="Seventh">Seventh</option>
+                                <option value="Eighth">Eighth</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="inputEmail" class="form-label visually-hidden">Email: </label>
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <i class="bi bi-envelope-open-fill"></i>
+                            </div>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="e-mail" name="Email" value=<?php echo $row['e-mail'] ?> required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="PHONENUMBER" class="form-label visually-hidden">Phone Number: </label>
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <i class="bi bi-telephone-forward-fill"></i>
+                            </div>
+                            <input type="text" class="form-control" id="PHONENUMBER" placeholder="Phone Number" name="PhoneNumber" value=<?php echo $row['Phone Number'] ?> required>
+                        </div>
+                    </div>
+
+                    <div class="updateButton" style="text-align: center;">
+                        <!-- <button type="submit" class="btn btn-primary btn-lg" name="Register">Register</button> -->
+                        <input type="submit" class="btn btn-outline-primary" name="Update" value="Update">
+                    </div>
+                </form>
+
+
+                <?php
+                
+                    if(isset($_POST['Update'])){
+
+                        $fname = $_POST['FirstName'];
+                        $lname = $_POST['LastName'];
+                        $USN = $_POST['USN'];
+                        $Branch = $_POST['Branch'];
+                        $Year = $_POST['Year'];
+                        $Sem = $_POST['SEM'];
+                        $email = $_POST['Email'];
+                        $PhoneNumber = $_POST['PhoneNumber'];
+
+                        $stmt2 = ("UPDATE student_register SET `First Name`='$fname', `Last Name`='$lname', `USN`='$USN', `Branch`='$Branch', `Year`='$Year', `SEM`='$Sem', `e-mail`='$email', `Phone Number`='$PhoneNumber' WHERE USN='$USN'");
+                        $stmt2_run = mysqli_query($con, $stmt2);
+
+                        if($stmt2_run){
+                            echo "Success";
+                            header('Location:5.0)studentProfile.php');
+                        }else{
+                            echo "fail";
+                        }
+                    }
+                ?>
+               
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

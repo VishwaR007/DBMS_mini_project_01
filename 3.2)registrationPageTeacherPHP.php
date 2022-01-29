@@ -11,6 +11,16 @@ if(mysqli_connect_error()){
     exit('Error connecting to the database' . mysqli_connect_error());
 }
 
+session_start();
+
+$hai = "hai";
+$_SESSION["hai"] = $hai;
+
+$_SESSION["RollNumber"] = $_POST['SSN'];
+$_SESSION["FirstName"] = $_POST['FirstName'];
+$_SESSION["LastName"] = $_POST['LastName'];
+
+
 // This below one is for validation :
 /* if(!isset($_POST['FirstName'], $_POST['LastName'], $_POST['SSN'], etc...)){
     exit('Empty Field(s)');
@@ -36,7 +46,7 @@ if($stmt = $con->prepare('SELECT SSN FROM teacher_register WHERE SSN = ?')){
             $stmt->bind_param('ssssssd', $_POST['FirstName'], $_POST['LastName'], $_POST['SSN'], $_POST['Branch'], $_POST['Email'], $_POST['Password'], $_POST['PhoneNumber']);
             $stmt->execute();
             echo "Succesfully registered";
-            // header("Location:1)mainLoginPage.html");
+            header("Location:3.21)subSelectionByTeachers.php");
         }else{
             echo "Error Occured";
         }
@@ -50,4 +60,9 @@ $con->close();
 
 
 ?>
+
+
+<?php
+
+
     

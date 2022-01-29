@@ -74,3 +74,22 @@ ul li:hover {
     color: greenyellow;
     cursor: pointer;
 }
+
+
+
+
+/* The nameBox in nav bar where profile exists that style is here  */
+.nameBox{
+    /* background-color: red; */
+}
+.nameBox button{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.nameBox2{
+    background-color: red;
+    margin: 0px 0px 0px 0px;
+    border-radius: 20px;
+    padding: 8px;
+}
