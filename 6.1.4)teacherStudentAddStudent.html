@@ -1,29 +1,3 @@
-<?php
-
-$DATABASE_HOST = "localhost";
-$DATABASE_USER = "root";
-$DATABASE_PASS = "";
-$DATABASE_NAME = "mini_project_01";
-
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-
-
-if ($con->connect_error) {
-    die("Failed to connect : " . $con->connect_error);
-}
-
-// session_start();
-// $USN = $_SESSION['RollNumber'];
-
-$USN = '092';
-
-$stmt = ("SELECT * FROM student_register WHERE USN='$USN'");
-$stmt_run = mysqli_query($con, $stmt);
-
-
-$row = mysqli_fetch_array($stmt_run);
-// var_dump($row);
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,19 +29,15 @@ $row = mysqli_fetch_array($stmt_run);
                 <i class="fas fa-user-secret"></i>
             </div>
             <div class="table1">
-
-
-                <form class="row g-3" action="" method="post">
+                <form class="row g-3" action="6.1.4)teacherStudentAddStudentPHP.php" method="post">
                     <div class="col-md-12">
                         <label for="inputFirstName" class="visually-hidden">First Name: </label>
                         <div class="input-group">
                             <div class="input-group-text">
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                          </svg> -->
+                                
                                 <i class="bi bi-person-fill"></i>
                             </div>
-                            <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" name="FirstName" value=<?php echo $row['First Name'] ?> required>
+                            <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" name="FirstName" required>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -76,7 +46,7 @@ $row = mysqli_fetch_array($stmt_run);
                             <div class="input-group-text">
                                 <i class="bi bi-person-fill"></i>
                             </div>
-                            <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" name="LastName" value=<?php echo $row['Last Name'] ?> required>
+                            <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" name="LastName" required>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -86,10 +56,10 @@ $row = mysqli_fetch_array($stmt_run);
                                 <!-- <i class="bi bi-pencil-square"></i> -->
                                 <i class="bi bi-person-badge"></i>
                             </div>
-                            <input type="text" class="form-control" id="USN" placeholder="USN" name="USN" value=<?php echo $row['USN'] ?> required>
+                            <input type="text" class="form-control" id="USN" placeholder="USN" name="USN" required>
                         </div>
                     </div>
-
+                    
                     <div class="col-md-4">
                         <label for="Branch" class="form-label visually-hidden">Branch: </label>
                         <div class="input-group">
@@ -97,7 +67,7 @@ $row = mysqli_fetch_array($stmt_run);
                                 <i class="bi bi-pencil-square"></i>
                             </div>
                             <select id="Branch" class="form-select" name="Branch" required>
-                                <option selected> <?php echo $row['Branch'] ?> </option>
+                                <option selected>Branch : </option>
                                 <option value="CSE">CSE</option>
                                 <option value="ECE">ECE</option>
                                 <option value="MEC">MEC</option>
@@ -113,7 +83,7 @@ $row = mysqli_fetch_array($stmt_run);
                                 <i class="bi bi-pencil-square"></i>
                             </div>
                             <select id="Year" class="form-select" name="Year" required>
-                                <option selected> <?php echo $row['Year'] ?> </option>
+                                <option selected>Year : </option>
                                 <option value="First">First</option>
                                 <option value="Second">Second</option>
                                 <option value="Third">Third</option>
@@ -128,7 +98,7 @@ $row = mysqli_fetch_array($stmt_run);
                                 <i class="bi bi-pencil-square"></i>
                             </div>
                             <select id="SEM" class="form-select" name="SEM" required>
-                                <option selected> <?php echo $row['Sem'] ?> </option>
+                                <option selected>SEM : </option>
                                 <option value="First">First</option>
                                 <option value="Second">Second</option>
                                 <option value="Third">Third</option>
@@ -147,29 +117,44 @@ $row = mysqli_fetch_array($stmt_run);
                             <div class="input-group-text">
                                 <i class="bi bi-envelope-open-fill"></i>
                             </div>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="e-mail" name="Email" value=<?php echo $row['e-mail'] ?> required>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="e-mail" name="Email" required>
                         </div>
                     </div>
-
+                    
+                    <div class="col-md-12">
+                        <label for="exampleInputPassword1" class="form-label visually-hidden">Password</label>
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <i class="bi bi-key-fill"></i>
+                            </div>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="Password" required>
+                        </div>
+                    </div>
                     <div class="col-md-12">
                         <label for="PHONENUMBER" class="form-label visually-hidden">Phone Number: </label>
                         <div class="input-group">
                             <div class="input-group-text">
                                 <i class="bi bi-telephone-forward-fill"></i>
                             </div>
-                            <input type="text" class="form-control" id="PHONENUMBER" placeholder="Phone Number" name="PhoneNumber" value=<?php echo $row['Phone Number'] ?> required>
+                            <input type="text" class="form-control" id="PHONENUMBER" placeholder="Phone Number" name="PhoneNumber" required>
                         </div>
                     </div>
-
-                    <div class="updateButton" style="text-align: center;">
+                    
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck" name="checkbox" required>
+                            <label class="form-check-label" for="gridCheck" style="color: rgb(216, 207, 207);">
+                                I agree with terms and condition.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="text-align: center;">
                         <!-- <button type="submit" class="btn btn-primary btn-lg" name="Register">Register</button> -->
-                        <input type="submit" class="btn btn-outline-primary" name="Update" value="Update">
+                        <input type="submit" class="btn btn-primary" name="Add" value="Add">
                     </div>
                 </form>
 
-
                 
-               
 
             </div>
         </div>

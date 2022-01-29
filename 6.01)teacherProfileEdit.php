@@ -15,9 +15,9 @@ if ($con->connect_error) {
 // session_start();
 // $USN = $_SESSION['RollNumber'];
 
-$USN = '092';
+$SSN = '55';
 
-$stmt = ("SELECT * FROM student_register WHERE USN='$USN'");
+$stmt = ("SELECT * FROM teacher_register WHERE SSN='$SSN'");
 $stmt_run = mysqli_query($con, $stmt);
 
 
@@ -57,7 +57,7 @@ $row = mysqli_fetch_array($stmt_run);
             <div class="table1">
 
 
-                <form class="row g-3" action="" method="post">
+                <form class="row g-3" action="6.01)teacherProfileEditPHP.php" method="post">
                     <div class="col-md-12">
                         <label for="inputFirstName" class="visually-hidden">First Name: </label>
                         <div class="input-group">
@@ -80,13 +80,13 @@ $row = mysqli_fetch_array($stmt_run);
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <label for="USN" class="visually-hidden">USN: </label>
+                        <label for="USN" class="visually-hidden">SSN: </label>
                         <div class="input-group">
                             <div class="input-group-text">
                                 <!-- <i class="bi bi-pencil-square"></i> -->
                                 <i class="bi bi-person-badge"></i>
                             </div>
-                            <input type="text" class="form-control" id="USN" placeholder="USN" name="USN" value=<?php echo $row['USN'] ?> required>
+                            <input type="text" class="form-control" id="USN" placeholder="SSN" name="SSN" value=<?php echo $row['SSN'] ?> required>
                         </div>
                     </div>
 
@@ -103,40 +103,6 @@ $row = mysqli_fetch_array($stmt_run);
                                 <option value="MEC">MEC</option>
                                 <option value="CIVIL">CIVIL</option>
                                 <option value="EEE">EEE</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="Year" class="form-label visually-hidden">Year: </label>
-                        <div class="input-group">
-                            <div class="input-group-text">
-                                <i class="bi bi-pencil-square"></i>
-                            </div>
-                            <select id="Year" class="form-select" name="Year" required>
-                                <option selected> <?php echo $row['Year'] ?> </option>
-                                <option value="First">First</option>
-                                <option value="Second">Second</option>
-                                <option value="Third">Third</option>
-                                <option value="Fourth">Fourth</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="SEM" class="form-label visually-hidden">SEM: </label>
-                        <div class="input-group">
-                            <div class="input-group-text">
-                                <i class="bi bi-pencil-square"></i>
-                            </div>
-                            <select id="SEM" class="form-select" name="SEM" required>
-                                <option selected> <?php echo $row['Sem'] ?> </option>
-                                <option value="First">First</option>
-                                <option value="Second">Second</option>
-                                <option value="Third">Third</option>
-                                <option value="Fourth">Fourth</option>
-                                <option value="Fifth">Fifth</option>
-                                <option value="Sixth">Sixth</option>
-                                <option value="Seventh">Seventh</option>
-                                <option value="Eighth">Eighth</option>
                             </select>
                         </div>
                     </div>
@@ -166,9 +132,6 @@ $row = mysqli_fetch_array($stmt_run);
                         <input type="submit" class="btn btn-outline-primary" name="Update" value="Update">
                     </div>
                 </form>
-
-
-                
                
 
             </div>

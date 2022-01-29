@@ -1,3 +1,4 @@
+
 <?php
 
 $DATABASE_HOST = "localhost";
@@ -12,10 +13,8 @@ if ($con->connect_error) {
     die("Failed to connect : " . $con->connect_error);
 }
 
-// session_start();
-// $USN = $_SESSION['RollNumber'];
-
-$USN = '092';
+// $USN = '092';
+$USN = $_GET['edit'];
 
 $stmt = ("SELECT * FROM student_register WHERE USN='$USN'");
 $stmt_run = mysqli_query($con, $stmt);
@@ -57,7 +56,7 @@ $row = mysqli_fetch_array($stmt_run);
             <div class="table1">
 
 
-                <form class="row g-3" action="" method="post">
+                <form class="row g-3" action="6.1.3)teacherStudentsDelete.php" method="post">
                     <div class="col-md-12">
                         <label for="inputFirstName" class="visually-hidden">First Name: </label>
                         <div class="input-group">
@@ -107,21 +106,6 @@ $row = mysqli_fetch_array($stmt_run);
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <label for="Year" class="form-label visually-hidden">Year: </label>
-                        <div class="input-group">
-                            <div class="input-group-text">
-                                <i class="bi bi-pencil-square"></i>
-                            </div>
-                            <select id="Year" class="form-select" name="Year" required>
-                                <option selected> <?php echo $row['Year'] ?> </option>
-                                <option value="First">First</option>
-                                <option value="Second">Second</option>
-                                <option value="Third">Third</option>
-                                <option value="Fourth">Fourth</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
                         <label for="SEM" class="form-label visually-hidden">SEM: </label>
                         <div class="input-group">
                             <div class="input-group-text">
@@ -165,11 +149,7 @@ $row = mysqli_fetch_array($stmt_run);
                         <!-- <button type="submit" class="btn btn-primary btn-lg" name="Register">Register</button> -->
                         <input type="submit" class="btn btn-outline-primary" name="Update" value="Update">
                     </div>
-                </form>
-
-
-                
-               
+                </form>  
 
             </div>
         </div>
