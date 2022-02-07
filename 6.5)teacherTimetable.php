@@ -43,7 +43,13 @@ $stmt_run = mysqli_query($con, $stmt);
                     <!-- <input type="submit" class="btn" name="myProfile" value="VR"> -->
                     <!-- here value should be from php, the first letter of both first and last names. -->
                     <a href="6.0)teacherProfile.php">
-                        <h1>VR</h1>
+                        <h1>
+                            <?php session_start();
+
+                            echo ucfirst(substr($_SESSION['FirstName'], 0, 1));
+                            echo ucfirst(substr($_SESSION['LastName'], 0, 1));
+                            ?>
+                        </h1>
                     </a>
                 </div>
                 <h4>Profile</h4>
@@ -64,11 +70,11 @@ $stmt_run = mysqli_query($con, $stmt);
         <div class="middleContainer">
             <div class="upperMiddleContainer">
                 <div class="left">
-                    <h1>Hello Name</h1>
-                    <h2>1ME19CS092</h2>
+                    <h1><?php echo ucfirst($_SESSION['FirstName']); ?></h1>
+                    <h2><?php echo $_SESSION['RollNumber']; ?></h2>
                 </div>
                 <div class="right">
-                    <a href="4)mainPage.html" class="HOMEBUTTON">HOME</a>
+                    <a href="4)mainPage.php" class="HOMEBUTTON">HOME</a>
                 </div>
             </div>
 

@@ -34,9 +34,10 @@ if ($res->num_rows == 0) {
     } else {
         echo "Teacher Success";
         echo "Go to teachers dashBoard";
+        header("Location:6)dashBoardTeacher.php");
     }
 }else{
     echo "Student Sucess";
     echo "Go to student dashBoard";
-
+    header("Location:5)dashBoardStudent.php");
 }

@@ -26,6 +26,20 @@
 
 .iconBox i {
     font-size: 150px;
+    color: black;
+    animation: iconStyle infinite alternate 3s linear;
+}
+
+@keyframes iconStyle {
+    0%{
+        color: black;
+    }
+    40%{
+        color: white;
+    }
+    80%{
+        color: red;
+    }
 }
 
 .table1{

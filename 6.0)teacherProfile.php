@@ -74,7 +74,7 @@ $stmt_run = mysqli_query($con, $stmt);
 
             </div>
             <div class="editButton">
-                <form action="6.01)teacherProfileEdit.php">
+                <form action="6.0.1)teacherProfileEdit.php">
                     <input type="submit" class="btn btn-success btn-lg" name="Edit" value="Edit">
                 </form>
             </div>

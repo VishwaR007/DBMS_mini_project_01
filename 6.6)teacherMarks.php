@@ -13,8 +13,8 @@ if ($con->connect_error) {
 }
 
 // $USN = 11;
-// TAKE THIS ABOVE VARAIBLE VALUE FROM SESSION.
-
+// TAKE THIS ABOVE VARAIBLE VALUE FROM .
+session_start();
 // $stmt = ("SELECT * FROM assignments_and_test_marks WHERE USN='$USN'");
 // $stmt_run = mysqli_query($con, $stmt);
 $stmt = ("SELECT * FROM sub2");
@@ -44,7 +44,13 @@ $stmt_run = mysqli_query($con, $stmt);
                     <!-- <input type="submit" class="btn" name="myProfile" value="VR"> -->
                     <!-- here value should be from php, the first letter of both first and last names. -->
                     <a href="6.0)teacherProfile.php">
-                        <h1>VR</h1>
+                        <h1>
+                            <?php 
+
+                            echo ucfirst(substr($_SESSION['FirstName'], 0, 1));
+                            echo ucfirst(substr($_SESSION['LastName'], 0, 1));
+                            ?>
+                        </h1>
                     </a>
                 </div>
                 <h4>Profile</h4>
@@ -63,13 +69,13 @@ $stmt_run = mysqli_query($con, $stmt);
         </div>
 
         <div class="middleContainer">
-        <div class="upperMiddleContainer">
+            <div class="upperMiddleContainer">
                 <div class="left">
-                    <h1>Hello Name</h1>
-                    <h2>SSN</h2>
+                    <h1><?php echo ucfirst($_SESSION['FirstName']); ?></h1>
+                    <h2><?php echo $_SESSION['RollNumber']; ?></h2>
                 </div>
                 <div class="right">
-                    <a href="4)mainPage.html" class="HOMEBUTTON">HOME</a>
+                    <a href="4)mainPage.php" class="HOMEBUTTON">HOME</a>
                 </div>
             </div>
 
@@ -88,7 +94,7 @@ $stmt_run = mysqli_query($con, $stmt);
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                         <?php while ($row = mysqli_fetch_array($stmt_run)) { ?>
                             <tr>
                                 <th><?php echo $row['USN']; ?></th>

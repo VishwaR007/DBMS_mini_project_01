@@ -187,9 +187,9 @@ thead{
     padding: 10px;
 
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-    /* animation: homeButton infinite ease-in 0.2s infinite running slidein; */
+    animation: homeButton infinite alternate 3s linear;
     /* animation: 5s linear 1s infinite alternate homeButton; */
-    animation: 3s linear 1s infinite alternate homeButton;
+    /* animation: 3s linear 1s infinite alternate homeButton; */
 }
 
 @keyframes homeButton {

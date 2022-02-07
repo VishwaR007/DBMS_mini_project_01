@@ -12,10 +12,10 @@ if ($con->connect_error) {
     die("Failed to connect : " . $con->connect_error);
 }
 
-// session_start();
-// $USN = $_SESSION['RollNumber'];
+session_start();
+$USN = $_SESSION['RollNumber'];
 
-$USN = '092';
+// $USN = '092';
 
 $stmt = ("SELECT * FROM student_register WHERE USN='$USN'");
 $stmt_run = mysqli_query($con, $stmt);
@@ -67,7 +67,7 @@ $stmt_run = mysqli_query($con, $stmt);
 
             </div>
             <div class="editButton">
-                <form action="5.01)studentProfileEdit.php">
+                <form action="5.0.1)studentProfileEdit.php">
                     <input type="submit" class="btn btn-success btn-lg" name="Edit" value="Edit">
                 </form>
             </div>

@@ -42,8 +42,9 @@ if ($res->num_rows == 0) {
             $_SESSION['FirstName'] = $row['First Name'];
             $_SESSION['LastName'] = $row['Last Name'];
             $_SESSION['RollNumber'] = $row['SSN'];
+            $_SESSION['SEM'] = $row['SEM'];
 
-            header("Location:4)mainPage.html");
+            header("Location:4)mainPage.php");
         } else {
             echo "Invalid password";
         }
@@ -60,8 +61,9 @@ if ($res->num_rows == 0) {
         $_SESSION['FirstName'] = $row['First Name'];
         $_SESSION['LastName'] = $row['Last Name'];
         $_SESSION['RollNumber'] = $row['USN'];
+        $_SESSION['SEM'] = $row['SEM'];
 
-        header("Location:4)mainPage.html");
+        header("Location:4)mainPage.php");
     } else {
         echo "Invalid password";
     }

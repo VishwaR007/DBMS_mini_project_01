@@ -63,10 +63,14 @@
                             
                             <div class="input-group">
                                 <div class="input-group-text nameBox2">
-                                    VR
+                                    <?php session_start(); 
+
+                                        echo ucfirst(substr($_SESSION['FirstName'], 0, 1));
+                                        echo ucfirst(substr($_SESSION['LastName'], 0, 1));
+                                    ?>
                                     <!-- Here comes the first letter of firstName and lastName  -->
                                 </div>
-                                <input type="submit" id="nameid" name="Name" value="Vishwanath R" class="btn btn-primary">
+                                <input type="submit" id="nameid" name="Name" value="<?php echo ucfirst($_SESSION['FirstName']) ?>" class="btn btn-primary">
                                 <!-- in this input value should be the firstname and lastname  -->
                             </div>
                         </form>

@@ -40,7 +40,7 @@ if (isset($_POST['Add'])) {
                 $stmt->bind_param('ssdddd', $_POST['USN'], $_POST['subCode'], $_POST['IA1'], $_POST['IA2'], $_POST['IA3'], $_POST['finals']);
                 $stmt->execute();
                 echo "Succesfully registered";
-                // header("Location:6.6)teacherMarks.php");
+                header("Location:6.6)teacherMarks.php");
             } else {
                 echo "Error Occured";
             }

@@ -12,10 +12,15 @@ if ($con->connect_error) {
     die("Failed to connect : " . $con->connect_error);
 }
 
-// $SEM = 'First';
+
+session_start();
+// $SEM1 = ucfirst($_SESSION['SEM']);
+// echo $SEM1;
+
+// $SEM = 'fifth';
 // TAKE THIS VALUE FROM THE SESSION VARIABLE.
 
-// $stmt = ("SELECT * FROM test_time_table_2 WHERE SEM='$SEM'");
+// $stmt = ("SELECT * FROM test_time_table_2 WHERE SEM='$SEM1'");
 $stmt = ("SELECT * FROM test_time_table_2");
 $stmt_run = mysqli_query($con, $stmt);
 
@@ -44,10 +49,13 @@ $stmt_run = mysqli_query($con, $stmt);
                     <!-- here value should be from php, the first letter of both first and last names. -->
                     <a href="5.0)studentProfile.php">
                         <h1>
-                            VR
-                            <?php
+                            <?php 
+                            // session_start();
 
+                            echo ucfirst(substr($_SESSION['FirstName'], 0, 1));
+                            echo ucfirst(substr($_SESSION['LastName'], 0, 1));
                             ?>
+                            <!-- P -->
                         </h1>
                     </a>
                 </div>
@@ -66,60 +74,7 @@ $stmt_run = mysqli_query($con, $stmt);
             </div>
         </div>
 
-        <!-- <div class="middleContainer">
-            <div class="upperMiddleContainer">
-                <h1>Hello Name</h1>
-            </div>
-
-            <hr>
-
-            <div class="heading">
-                    <?php
-                    $row = mysqli_fetch_assoc($stmt_run);
-
-                    echo '<h1>', $row['title'], " ", "Time-Table", '</h1>';
-                    echo '<h1>', $row['SEM'], " ", "SEM", '</h1>';
-                    ?>
-            </div>
-
-            <div class="middleMiddleContainer">
-                
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">Date</th>
-                            <th scope="col">10:00AM to 11:30AM</th>
-                            <th scope="col">2:30PM to 4:00PM</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-
-                        echo '<tr>';
-                        echo '<th scope="row">', $row['first_day'], '</th>';
-                        echo '<td>', $row['first_test'], '</td>';
-                        echo '<td>', $row['second_test'], '</td>';
-                        echo '</tr>';
-                        echo '<tr>';
-                        echo '<th scope="row">', $row['second_day'], '</th>';
-                        echo '<td>', $row['third_test'], '</td>';
-                        echo '<td>', $row['fourth_test'], '</td>';
-                        echo '</tr>';
-                        echo '<tr>';
-                        echo '<th scope="row">', $row['third_day'], '</th>';
-                        echo '<td>', $row['fifth_test'], '</td>';
-                        echo '<td>', $row['sixth_test'], '</td>';
-                        echo '</tr>';
-
-                        ?>
-                    </tbody>
-                </table>
-            </div>
-
-            
-
-
-        </div> -->
+        
 
 
 
@@ -130,7 +85,7 @@ $stmt_run = mysqli_query($con, $stmt);
                     <h2>1ME19CS092</h2>
                 </div>
                 <div class="right">
-                    <a href="4)mainPage.html" class="HOMEBUTTON">HOME</a>
+                    <a href="4)mainPage.php" class="HOMEBUTTON">HOME</a>
                 </div>
             </div>
 
@@ -201,3 +156,7 @@ $stmt_run = mysqli_query($con, $stmt);
 </body>
 
 </html>
+
+
+
+

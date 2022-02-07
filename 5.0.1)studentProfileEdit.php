@@ -12,10 +12,10 @@ if ($con->connect_error) {
     die("Failed to connect : " . $con->connect_error);
 }
 
-// session_start();
-// $USN = $_SESSION['RollNumber'];
+session_start();
+$USN = $_SESSION['RollNumber'];
 
-$USN = '092';
+// $USN = '092';
 
 $stmt = ("SELECT * FROM student_register WHERE USN='$USN'");
 $stmt_run = mysqli_query($con, $stmt);
@@ -57,7 +57,7 @@ $row = mysqli_fetch_array($stmt_run);
             <div class="table1">
 
 
-                <form class="row g-3" action="" method="post">
+                <form class="row g-3" action="5.0.1)studentProfileEditPHP.php" method="post">
                     <div class="col-md-12">
                         <label for="inputFirstName" class="visually-hidden">First Name: </label>
                         <div class="input-group">
